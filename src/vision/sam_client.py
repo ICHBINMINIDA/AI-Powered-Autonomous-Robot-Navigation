@@ -2,9 +2,14 @@
 
 from __future__ import annotations
 
+import logging
+
 import cv2
 import numpy as np
 import requests
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 class SamClient:
@@ -41,5 +46,5 @@ class SamClient:
                 return list(masks)
             return []
         except (requests.RequestException, ValueError, TypeError) as exc:
-            print(f"SAM service error: {exc}")
+            LOGGER.error("SAM service request failed: %s", exc)
             return []

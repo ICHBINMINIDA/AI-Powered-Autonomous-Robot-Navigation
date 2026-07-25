@@ -2,7 +2,7 @@
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![ROS 2](https://img.shields.io/badge/ROS%202-Humble-22314E.svg)](https://docs.ros.org/en/humble/)
-[![Tests](https://img.shields.io/badge/tests-3%20passing-brightgreen.svg)](#testing)
+[![Tests](https://github.com/ICHBINMINIDA/AI-Powered-Autonomous-Robot-Navigation/actions/workflows/tests.yml/badge.svg)](https://github.com/ICHBINMINIDA/AI-Powered-Autonomous-Robot-Navigation/actions/workflows/tests.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Status](https://img.shields.io/badge/status-working%20prototype-orange.svg)](#project-status)
 
@@ -16,13 +16,10 @@ A modular voice-controlled robotics system that converts a spoken command into a
 
 ## Demo
 
-The repository is prepared for a short portfolio GIF and a full demonstration video. Add the final files using the naming and recording guide in [`media/README.md`](media/README.md).
+A complete recorded demonstration shows the wake word, spoken command, target extraction, visual search, alignment, approach, and final stop behavior.
 
-<!-- Enable after adding the real demo file.
-<p align="center">
-  <img src="media/demo.gif" alt="Robot navigation demo" width="760">
-</p>
--->
+> Add your recorded file as `media/robot-navigation-demo.mp4`, then use this link:  
+> **[Watch the full robot demonstration](media/robot-navigation-demo.mp4)**
 
 ## Highlights
 
@@ -194,7 +191,7 @@ source /opt/ros/humble/setup.bash
 # source ~/your_ros2_workspace/install/setup.bash
 ```
 
-Adapt the values in [`src/config.py`](src/config.py), especially:
+Set the deployment-specific environment variables shown in [`.env.example`](.env.example), especially:
 
 - VOSK model path
 - Ollama URL and model
@@ -226,7 +223,7 @@ Press `ESC` in the OpenCV window or `Ctrl+C` in the terminal to stop safely.
 
 ## Configuration
 
-All runtime constants are grouped in the immutable `Settings` dataclass in [`src/config.py`](src/config.py). The most influential parameters are:
+Runtime constants are grouped in the immutable `Settings` dataclass in [`src/config.py`](src/config.py). Deployment-specific paths, endpoints, models, and ROS topics can be overridden through environment variables. The most influential parameters are:
 
 | Parameter | Purpose |
 |---|---|
@@ -272,23 +269,9 @@ Current test coverage verifies core search and tracking behavior, including phas
 
 ## Project status
 
-**Working prototype in the original university environment.**
+Public portfolio release of a working prototype validated in the original university robot and GPU environment. The repository includes the modular implementation, deterministic navigation tests, CI workflow, and complete technical documentation.
 
-Completed:
-
-- end-to-end voice-to-object-to-navigation pipeline;
-- modular codebase after the Sprint 1 and Sprint 2 refactoring;
-- dedicated search, tracking, orchestration, UI, ROS, vision, voice, and LLM modules;
-- unit tests for deterministic navigation behavior;
-- architecture, setup, troubleshooting, and code documentation;
-- repository templates and portfolio media structure.
-
-Remaining before the public portfolio release:
-
-- add the real demo GIF and video link;
-- add selected screenshots from the live robot run;
-- validate the refactored build again on the physical robot;
-- optionally move runtime settings to YAML or environment variables.
+Physical-robot validation remains environment-specific because the full stack depends on ROS 2 hardware, microphone input, camera and LaserScan topics, and locally hosted GPU services.
 
 ## Documentation
 

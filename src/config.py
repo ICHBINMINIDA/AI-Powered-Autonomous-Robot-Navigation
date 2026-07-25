@@ -1,27 +1,44 @@
 """Central configuration for the robot navigation system."""
 
+from __future__ import annotations
+
+import os
 from dataclasses import dataclass
 
 
 @dataclass(frozen=True)
 class Settings:
+    """Runtime settings with safe, portable defaults.
+
+    Deployment-specific paths and service endpoints can be overridden through
+    environment variables without changing the source code.
+    """
+
     # Speech recognition
-    vosk_model_path: str = "/home/kilab/thb/ros2/ws2425/opencv_start/vosk-model-small-en-us-0.15"
+    vosk_model_path: str = os.getenv(
+        "VOSK_MODEL_PATH",
+        "models/vosk-model-small-en-us-0.15",
+    )
     sample_rate: int = 16000
-    wake_word: str = "hi robot"
+    wake_word: str = os.getenv("ROBOT_WAKE_WORD", "hi robot")
     audio_blocksize: int = 2048
     audio_queue_timeout: float = 0.01
 
-
     # Local AI services (typically exposed through SSH tunnels)
-    ollama_url: str = "http://localhost:18080/api/generate"
-    ollama_model: str = "llama3"
-    sam_service_url: str = "http://localhost:15000/segment"
+    ollama_url: str = os.getenv(
+        "OLLAMA_URL",
+        "http://localhost:18080/api/generate",
+    )
+    ollama_model: str = os.getenv("OLLAMA_MODEL", "llama3")
+    sam_service_url: str = os.getenv(
+        "SAM_SERVICE_URL",
+        "http://localhost:15000/segment",
+    )
 
     # ROS 2 topics
-    image_topic: str = "camera/image"
-    scan_topic: str = "/scan"
-    cmd_vel_topic: str = "/cmd_vel"
+    image_topic: str = os.getenv("ROS_IMAGE_TOPIC", "camera/image")
+    scan_topic: str = os.getenv("ROS_SCAN_TOPIC", "/scan")
+    cmd_vel_topic: str = os.getenv("ROS_CMD_VEL_TOPIC", "/cmd_vel")
     ros_spin_timeout: float = 0.01
 
     # Vision and SAM

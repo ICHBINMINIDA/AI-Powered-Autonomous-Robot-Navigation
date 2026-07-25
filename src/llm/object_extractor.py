@@ -3,9 +3,13 @@
 from __future__ import annotations
 
 import json
+import logging
 from typing import Optional
 
 import requests
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 class ObjectExtractor:
@@ -39,5 +43,5 @@ Command: "{command_text}"
             target = parsed.get("object")
             return str(target).strip().lower() if target else None
         except (requests.RequestException, KeyError, TypeError, ValueError, json.JSONDecodeError) as exc:
-            print(f"Object extraction failed: {exc}")
+            LOGGER.error("Object extraction failed: %s", exc)
             return None

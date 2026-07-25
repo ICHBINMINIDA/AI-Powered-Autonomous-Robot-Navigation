@@ -3,11 +3,15 @@
 from __future__ import annotations
 
 import json
+import logging
 import queue
 import re
 from typing import Optional
 
 from vosk import KaldiRecognizer, Model
+
+
+LOGGER = logging.getLogger(__name__)
 
 
 class VoiceListener:
@@ -30,7 +34,7 @@ class VoiceListener:
         """sounddevice callback: copy microphone bytes into a thread-safe queue."""
         del frames, time_info
         if status:
-            print(f"Audio status: {status}")
+            LOGGER.warning("Audio input status: %s", status)
         self.audio_queue.put(bytes(indata))
 
     def get_audio(self, timeout: float = 0.01) -> Optional[bytes]:
