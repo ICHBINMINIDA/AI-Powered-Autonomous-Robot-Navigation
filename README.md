@@ -18,7 +18,7 @@ A modular voice-controlled robotics system that converts a spoken command into a
 
 A complete demonstration of the robot is available in the project's first release.
 
-➡️ **Download and watch the demo video here:**
+➡️ ** Download and watch the demo video here: **
 
 https://github.com/ICHBINMINIDA/AI-Powered-Autonomous-Robot-Navigation/releases/tag/v1.0.0
 
