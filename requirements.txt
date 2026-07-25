@@ -1,0 +1,6 @@
+numpy
+opencv-python
+requests
+sounddevice
+vosk
+# ROS 2 packages (rclpy, sensor_msgs, geometry_msgs, cv_bridge) are installed through ROS 2/apt.
