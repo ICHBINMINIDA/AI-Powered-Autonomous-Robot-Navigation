@@ -14,12 +14,13 @@ A modular voice-controlled robotics system that converts a spoken command into a
   <img src="docs/images/system-workflow.png" alt="System workflow" width="850">
 </p>
 
-## Demo
+## 🎥 Project Demonstration
 
-A complete recorded demonstration shows the wake word, spoken command, target extraction, visual search, alignment, approach, and final stop behavior.
+A complete demonstration of the robot is available in the project's first release.
 
-> Add your recorded file as `media/robot-navigation-demo.mp4`, then use this link:  
-> **[Watch the full robot demonstration](media/robot-navigation-demo.mp4)**
+➡️ **Download and watch the demo video here:**
+
+https://github.com/ICHBINMINIDA/AI-Powered-Autonomous-Robot-Navigation/releases/tag/v1.0.0
 
 ## Highlights
 
