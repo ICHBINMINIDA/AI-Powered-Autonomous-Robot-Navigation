@@ -1,3 +1,7 @@
+
+
+https://github.com/user-attachments/assets/1c78c70c-ad37-457d-b0d1-7b9cf0511ec1
+
 # AI-Powered Autonomous Robot Navigation
 
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
@@ -18,9 +22,7 @@ A modular voice-controlled robotics system that converts a spoken command into a
 
 A complete demonstration of the robot is available in the project's first release.
 
-➡️ ** Download and watch the demo video here: **
-
-https://github.com/ICHBINMINIDA/AI-Powered-Autonomous-Robot-Navigation/releases/tag/v1.0.0
+https://github.com/user-attachments/assets/0d404533-6b77-49b1-aa05-57a48adf29f9
 
 ## Highlights
 
